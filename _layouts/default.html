@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% seo %}
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://git.haiphan.design/harmony/harmony.min.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,600i&display=swap&subset=latin-ext,vietnamese"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ "/assets/addons/fontawesome/all.min.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+
+
+</head>
+
+<body>
+
+    <div class="de-scene">
+        <div class="de-wrapper">
+            <div class="de-header">
+
+                <div class="de-topbar">
+
+                    <div class="de-topbar-message"><span class="has-text-smallcaps">:/DEADEND/SEASON01/</span></div>
+
+                    <nav class="de-topbar-menu">
+                        <ul class="de-topbar-menu-wrapper">
+                            <li class="menu-item"><a href="#">Wishlist</a></li>
+                            <li class="menu-item current-menu-item"><a href="#">Cart (2)</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+                <div class="de-navbar">
+
+                    <div class="de-navbar-logo">
+                        <div class="de-navbar-logo-image">
+                            {%- include logo-svg.html -%}
+                        </div>
+                    </div>
+
+                    <nav class="de-navbar-menu">
+                        <ul class="de-navbar-menu-wrapper">
+                            <li class="menu-item current-menu-item">
+                                <a href="#">Collections</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Sub Menu #1</a></li>
+                                    <li><a href="#">Sub Menu #2</a></li>
+                                    <li><a href="#">Sub Menu #3</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a href="#">Collections</a></li>
+                            <li class="menu-item"><a href="#">Collections</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="de-navbar-toggle"></div>
+
+                </div>
+
+            </div>
+            <div class="de-body">
+                <div id="main">
+                    {{ content }}
+                </div>
+            </div>
+            <div class="de-footer">
+                <span class="has-text-smallcaps">footer</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    {%- include javascript.html -%}
+
+</body>
+
+</html>
