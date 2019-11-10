@@ -15,3 +15,10 @@ jQuery(window).on('load', function () {
 
     jQuery('.de-body').css('min-height', mainMinHeight);
 });
+
+
+const toggleClass = (el, className) => el.classList.toggle(className);
+
+document.querySelector('.de-navbar-menu-toggle').addEventListener('click', function () {
+    toggleClass(document.querySelector('.de-navbar-menu-toggle'), 'is-active');
+})
