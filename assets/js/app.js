@@ -1,3 +1,21 @@
+// ONSCROLL
+
+jQuery(function () {
+    //caches a jQuery object containing the header element
+    var header = jQuery(".de-header");
+    jQuery(".de-wrapper").scroll(function () {
+        var scroll = jQuery(".de-wrapper").scrollTop();
+
+        if (scroll >= 10) {
+            header.removeClass('is-top').addClass("is-scroll");
+        } else {
+            header.removeClass("is-scroll").addClass('is-top');
+        }
+    });
+});
+
+// MAIN MIN-HEIGHT
+
 var headerHeight;
 var footerHeight;
 

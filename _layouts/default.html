@@ -23,75 +23,81 @@
 
     <div class="de-scene">
         <div class="de-wrapper de-window">
-            <div class="de-header">
+            <div class="de-main">
+                <div class="de-header de-window-background">
 
-                <div class="de-topbar">
+                    <div class="de-topbar">
 
-                    <div class="de-topbar-window-buttons de-window-buttons">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-
-                    <div class="de-topbar-message"><span class="has-text-smallcaps">:/DEADEND/SEASON01/</span></div>
-
-                    <nav class="de-topbar-menu">
-                        <ul class="de-topbar-menu-wrapper">
-                            <li class="menu-item"><a href="#"><i class="far fa-star"></i></a></li>
-                            <li class="menu-item current-menu-item"><a href="#"><i class="far fa-shopping-basket"></i>
-                                    (2)</a></li>
-                        </ul>
-                    </nav>
-
-                </div>
-
-                <div class="de-navbar">
-
-                    <div class="de-navbar-logo">
-                        <div class="de-navbar-logo-image">
-                            {%- include logo-svg.html -%}
-                        </div>
-                    </div>
-
-                    <nav class="de-navbar-menu">
-
-                        <div class="de-navbar-menu-toggle">
+                        <div class="de-topbar-window-buttons de-window-buttons">
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
 
-                        <ul class="de-navbar-menu-wrapper">
-                            <li class="menu-item current-menu-item">
-                                <a href="#">Collections</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Sub Menu #1</a></li>
-                                    <li><a href="#">Sub Menu #2</a></li>
-                                    <li><a href="#">Sub Menu #3</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item"><a href="#">Collections</a></li>
-                            <li class="menu-item"><a href="#">Collections</a></li>
+                        <div class="de-topbar-message"><span class="has-text-smallcaps">:/DEADEND/SEASON01/</span></div>
+
+                        <nav class="de-topbar-menu">
+                            <ul class="de-topbar-menu-wrapper">
+                                <li class="menu-item"><a href="#"><i class="far fa-star"></i></a></li>
+                                <li class="menu-item current-menu-item"><a href="#"><i
+                                            class="far fa-shopping-basket"></i>
+                                        (2)</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                    <div class="de-navbar">
+
+                        <div class="de-navbar-logo">
+                            <div class="de-navbar-logo-image">
+                                {%- include logo-svg.html -%}
+                            </div>
+                        </div>
+
+                        <nav class="de-navbar-menu">
+
+                            <div class="de-navbar-menu-toggle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <ul class="de-navbar-menu-wrapper">
+                                <li class="menu-item">
+                                    <a href="#">Collections</a>
+                                    <ul class="sub-menu de-window-background">
+                                        <li><a href="#">Sub Menu #1</a></li>
+                                        <li><a href="#">Sub Menu #2</a></li>
+                                        <li><a href="#">Sub Menu #3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item"><a href="#">Drops</a></li>
+                                <li class="menu-item"><a href="#">Collections</a></li>
+                                <li class="menu-item">
+                                    <a href="#">About</a>
+                                </li>
+                            </ul>
+
+                        </nav>
+
+                    </div>
+
+                </div>
+                <div class="de-body">
+                    <div id="main">
+                        {{ content }}
+                    </div>
+                </div>
+                <div class="de-footer de-window-background">
+                    <span class="has-text-smallcaps">© Deadend</span>
+                    <div class="de-footer-left"></div>
+                    <div class="de-footer-right">
+                        <ul class="de-footer-socials">
+                            <li><a href="#">FB</a></li>
+                            <li><a href="#">IG</a></li>
                         </ul>
-
-                    </nav>
-
-                </div>
-
-            </div>
-            <div class="de-body">
-                <div id="main">
-                    {{ content }}
-                </div>
-            </div>
-            <div class="de-footer">
-                <span class="has-text-smallcaps">© Deadend</span>
-                <div class="de-footer-left"></div>
-                <div class="de-footer-right">
-                    <ul class="de-footer-socials">
-                        <li><a href="#">FB</a></li>
-                        <li><a href="#">IG</a></li>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
