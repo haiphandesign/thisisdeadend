@@ -499,12 +499,12 @@ body {
     position: relative;
     z-index: 100;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
     border-bottom: 1px solid var(--border-color);
 
     @include breakpoint(md) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         width: 75%;
     }
 
@@ -533,10 +533,12 @@ body {
 .de-tfd-big-title {
     padding: 0 1.5rem;
     margin-bottom: 10vw;
+    width: 100%;
+    overflow-x: hidden;
 
     @include breakpoint(md) {
         padding: 0 1rem;
-        margin-bottom: 5vw;
+        margin-bottom: 0;
     }
 
     &-heading {
@@ -674,7 +676,7 @@ body {
         @include breakpoint(md) {
             position: absolute;
             top: 50vw;
-            left: 2rem;
+            left: 10vw;
 
             width: 30vw;
 

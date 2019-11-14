@@ -39,19 +39,19 @@ window.onscroll = function () {
 function deadendHeaderFooter() {
     jQuery(window).scroll(function () {
         setTimeout(function () {
-            //HEADER
+            // FROM TOP
             if (jQuery(window).scrollTop() >= 10) {
                 jQuery(".de-header").removeClass('is-top').addClass("is-scroll");
             } else {
                 jQuery(".de-header").removeClass("is-scroll").addClass('is-top');
             }
-            // FOOTER
+            // TO BOTTOM
             if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
                 jQuery(".de-footer").removeClass("is-scroll").addClass('is-bottom');
             } else {
                 jQuery(".de-footer").removeClass('is-bottom').addClass("is-scroll");
             }
-        }, 200);
+        }, 500);
     });
 }
 
