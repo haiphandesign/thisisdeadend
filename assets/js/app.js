@@ -6,24 +6,36 @@ jQuery(function () {
     jQuery(".de-wrapper").scroll(function () {
         var scroll = jQuery(".de-wrapper").scrollTop();
 
-        if (scroll >= 10) {
-            header.removeClass('is-top').addClass("is-scroll");
-        } else {
-            header.removeClass("is-scroll").addClass('is-top');
-        }
+        setTimeout(function () {
+            if (scroll >= 10) {
+                header.removeClass('is-top').addClass("is-scroll");
+            } else {
+                header.removeClass("is-scroll").addClass('is-top');
+            }
+        }, 200);
     });
 });
 
+// ONRESIZE
+
+window.onresize = function () {
+    bodyMinHeight();
+}
+
 // MAIN MIN-HEIGHT
 
-var headerHeight;
-var footerHeight;
-
 jQuery(window).on('load', function () {
+    setTimeout(function () {
+        bodyMinHeight()
+    }, 500);
+});
+
+function bodyMinHeight() {
+    wrapperHeight = jQuery('.de-wrapper').outerHeight();
     headerHeight = jQuery('.de-header').outerHeight(true);
     footerHeight = jQuery('.de-footer').outerHeight(true);
 
-    var mainMinHeight = `calc(100% - ${headerHeight}px - ${footerHeight}px)`;
+    var mainMinHeight = `calc(${wrapperHeight}px - ${headerHeight}px - ${footerHeight}px - 2px)`;
 
     // if (window.innerWidth < 1025) {
     //     var mainMinHeight = `calc(100% - 3rem - ${headerHeight}px - ${footerHeight}px - 6px)`;
@@ -32,7 +44,7 @@ jQuery(window).on('load', function () {
     // }
 
     jQuery('.de-body').css('min-height', mainMinHeight);
-});
+}
 
 
 const toggleClass = (el, className) => el.classList.toggle(className);
