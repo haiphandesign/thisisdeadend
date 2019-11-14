@@ -1,41 +1,70 @@
-// ONSCROLL
-
-jQuery(function () {
-    //caches a jQuery object containing the header element
-    var header = jQuery(".de-header");
-    jQuery(".de-wrapper").scroll(function () {
-        var scroll = jQuery(".de-wrapper").scrollTop();
-
-        setTimeout(function () {
-            if (scroll >= 10) {
-                header.removeClass('is-top').addClass("is-scroll");
-            } else {
-                header.removeClass("is-scroll").addClass('is-top');
-            }
-        }, 200);
-    });
-});
-
 // ONRESIZE
 
 window.onresize = function () {
     bodyMinHeight();
+    deadendHeaderFooter();
 }
 
-// MAIN MIN-HEIGHT
+// ONRESIZE
 
-jQuery(window).on('load', function () {
+window.onload = function () {
     setTimeout(function () {
-        bodyMinHeight()
+        bodyMinHeight();
     }, 500);
-});
+    deadendHeaderFooter();
+
+    lax.setup({
+        breakpoints: {
+            xs: 0,
+            sm: 768,
+            md: 1024
+        }
+    }) // init
+
+    const updateLax = () => {
+        lax.update(window.scrollY)
+        window.requestAnimationFrame(updateLax)
+    }
+
+    window.requestAnimationFrame(updateLax)
+}
+
+window.onscroll = function () {
+    deadendHeaderFooter();
+}
+
+
+// DEADEND HEADER & FOOTER
+
+function deadendHeaderFooter() {
+    jQuery(window).scroll(function () {
+        setTimeout(function () {
+            //HEADER
+            if (jQuery(window).scrollTop() >= 10) {
+                jQuery(".de-header").removeClass('is-top').addClass("is-scroll");
+            } else {
+                jQuery(".de-header").removeClass("is-scroll").addClass('is-top');
+            }
+            // FOOTER
+            if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+                jQuery(".de-footer").removeClass("is-scroll").addClass('is-bottom');
+            } else {
+                jQuery(".de-footer").removeClass('is-bottom').addClass("is-scroll");
+            }
+        }, 200);
+    });
+}
+
+
+// MAIN MIN-HEIGHT
 
 function bodyMinHeight() {
     wrapperHeight = jQuery('.de-wrapper').outerHeight();
     headerHeight = jQuery('.de-header').outerHeight(true);
     footerHeight = jQuery('.de-footer').outerHeight(true);
+    subfooterHeight = jQuery('.de-subfooter').outerHeight(true);
 
-    var mainMinHeight = `calc(${wrapperHeight}px - ${headerHeight}px - ${footerHeight}px - 2px)`;
+    var mainMinHeight = `calc(${wrapperHeight}px - ${headerHeight}px - ${footerHeight}px - ${subfooterHeight}px - 2px)`;
 
     // if (window.innerWidth < 1025) {
     //     var mainMinHeight = `calc(100% - 3rem - ${headerHeight}px - ${footerHeight}px - 6px)`;
