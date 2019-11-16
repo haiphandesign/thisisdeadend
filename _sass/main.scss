@@ -26,6 +26,7 @@ html {
 
 body {
     // position: fixed;
+    position: relative;
     // top: 0;
     // right: 0;
     // bottom: 0;
@@ -35,6 +36,7 @@ body {
     // height: 100%;
 
     color: var(--text);
+
 }
 
 .has-text-smallcaps {
@@ -499,12 +501,12 @@ body {
     position: relative;
     z-index: 100;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
     border-bottom: 1px solid var(--border-color);
 
     @include breakpoint(md) {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         width: 75%;
     }
 
@@ -579,6 +581,10 @@ body {
         @include breakpoint(md) {
             padding-top: 5vw;
         }
+
+        &-dr {
+            padding-left: 2.125rem;
+        }
     }
 
     &-figure {
@@ -619,13 +625,13 @@ body {
 
         &-03 {
             position: absolute;
-            top: 0;
+            top: -10vw;
             right: 10vw;
             z-index: 1;
 
             display: block;
-            width: 40vw;
-            height: 40vw;
+            width: 60vw;
+            height: 60vw;
 
             border-radius: 50%;
 
