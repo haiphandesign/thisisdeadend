@@ -1,0 +1,58 @@
+.de-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5vw;
+
+    transition: .25s all ease;
+
+    .de-header-logo {
+        width: 50vw;
+        transition: .25s all ease;
+
+        @include breakpoint(md) {
+            width: 20vw;
+        }
+
+        svg {
+            fill: currentColor;
+        }
+    }
+
+    &.is-scroll {
+        padding: 2rem 5vw;
+        transition: .25s all ease;
+
+        .de-header-logo {
+            width: 50vw;
+            transition: .25s all ease;
+
+            @include breakpoint(md) {
+                width: 10vw;
+            }
+        }
+    }
+}
+
+
+
+.de-header-menu {
+    ul {
+        display: flex;
+
+        font-family: var(--font-family-monospace);
+        text-transform: lowercase;
+
+        >li {
+            +li {
+                &:before {
+                    content: ', ';
+                }
+            }
+        }
+    }
+}

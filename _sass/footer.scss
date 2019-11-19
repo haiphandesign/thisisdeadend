@@ -1,5 +1,6 @@
 .de-footer {
     position: relative;
+    overflow: hidden;
 }
 
 .de-footer-logo {
@@ -7,18 +8,23 @@
     top: 0;
     right: 0;
     mix-blend-mode: multiply;
+    z-index: 1;
 
-    width: 200%;
+    width: 150%;
 
     overflow: hidden;
     opacity: .2;
 
+    transform: rotate(90deg) translateX(50vw);
+    transform-origin: 50% 100%;
+
     @include breakpoint(md) {
+        transform: none;
         width: 75%;
     }
 
     svg {
-        fill: var(--background);
+        fill: black;
 
         @include breakpoint(md) {
             margin-right: -5vw;
@@ -27,6 +33,9 @@
 }
 
 .de-footer-wrapper {
+    position: relative;
+    z-index: 2;
+
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: calc(var(--font-size-7) * 2);
@@ -42,15 +51,24 @@
 
 
 .de-footer-about {
+    position: relative;
     font-family: var(--font-family-serif);
-    font-size: var(--font-size-3);
-    font-weight: 300;
+    font-size: var(--font-size-4);
 
     margin-bottom: calc(var(--font-size-7) * 2);
 
     @include breakpoint(md) {
-        font-size: var(--font-size-2);
+        font-size: var(--font-size-4);
         margin-bottom: 0;
+    }
+
+    >*+* {
+        margin-top: 1em;
+    }
+
+    p {
+        text-align: justify;
+        hyphens: auto;
     }
 }
 
@@ -117,7 +135,7 @@
 .de-footer-copyright {
     font-family: var(--font-family-monospace);
     text-transform: lowercase;
-    padding: 0 5vw 5vw;
+    padding: 0 5vw 10vw;
 
     @include breakpoint(md) {
         text-align: center;
