@@ -1,10 +1,19 @@
 @import 'mixins';
 
+@font-face {
+    font-family: 'Xerox Serif Wide';
+    src: url('/assets/fonts/XeroxSerifWideFC.woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
 :root {
     // HARMONY
     --background: rgba(20, 50, 40, 1);
 
     --font-family-sans-serif: 'Montserrat', sans-serif;
+    --font-family-serif: 'Xerox Serif Wide', serif;
+    --font-family-monospace: 'Inconsolata', monospace;
     --font-size: 12px;
     --font-size-mobile: 12px;
     --font-size-7: 9px;
@@ -36,6 +45,10 @@ body {
     // height: 100%;
 
     color: var(--text);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-size-adjust: none;
 
 }
 
@@ -444,54 +457,53 @@ body {
     }
 }
 
-.de-footer {
-    position: sticky;
-    bottom: 0;
-    z-index: 9000;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
-    border-top: 1px solid var(--border-color);
+// .de-footer {
+//     position: sticky;
+//     bottom: 0;
+//     z-index: 9000;
 
-    padding: 0.75rem 2rem;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
 
-    transition: all 0.5s ease;
+//     border-top: 1px solid var(--border-color);
 
-    @include de-window-background;
+//     padding: 0.75rem 2rem;
 
-    &.is-bottom {
-        margin: 0 2rem;
-        padding: 0.75rem 0;
+//     transition: all 0.5s ease;
 
-        transition: all 0.5s ease;
-    }
+//     @include de-window-background;
 
-    .de-footer-socials {
-        display: grid;
-        grid-auto-flow: column;
-        grid-gap: 0.75rem;
+//     &.is-bottom {
+//         margin: 0 2rem;
+//         padding: 0.75rem 0;
 
-        li {
-            font-size: var(--font-size-7);
-            font-weight: normal;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+//         transition: all 0.5s ease;
+//     }
 
-            +li {
-                &:before {
-                    content: '—';
-                    margin-right: 0.75rem;
-                }
-            }
-        }
-    }
-}
+//     .de-footer-socials {
+//         display: grid;
+//         grid-auto-flow: column;
+//         grid-gap: 0.75rem;
 
-.de-subfooter {
-    border-top: 1px solid var(--border-color);
-}
+//         li {
+//             font-size: var(--font-size-7);
+//             font-weight: normal;
+//             letter-spacing: 2px;
+//             text-transform: uppercase;
+
+//             +li {
+//                 &:before {
+//                     content: '—';
+//                     margin-right: 0.75rem;
+//                 }
+//             }
+//         }
+//     }
+// }
+
 
 .de-body {
     position: relative;
@@ -534,6 +546,7 @@ body {
 
 .de-tfd-big-title {
     padding: 0 1.5rem;
+    margin-top: 5vw;
     margin-bottom: 10vw;
     width: 100%;
 
@@ -751,3 +764,6 @@ body {
         transform: translateX(-150px);
     }
 }
+
+
+@import 'footer';

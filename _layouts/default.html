@@ -13,6 +13,11 @@
     <link
         href="https://fonts.googleapis.com/css?family=Krona+One|Montserrat:400,400i,600,600i&display=swap&subset=latin-ext,vietnamese"
         rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Grenze:300,300i,400,400i,700,700i&display=swap&subset=vietnamese"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap&subset=latin-ext,vietnamese"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ "/assets/addons/fontawesome/all.min.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 
@@ -21,75 +26,6 @@
 
 <body>
 
-    <div class="de-noise is-nonselectable is-click-through"></div>
-
-    <!-- <div class="de-scene">
-        <div class="de-wrapper de-window">
-            <div class="de-main"> -->
-
-    <div class="de-header">
-
-        <div class="de-topbar">
-
-            <div class="de-topbar-window-buttons de-window-buttons">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <div class="de-topbar-message">
-                <span class="has-text-smallcaps">
-                    :/DEADEND/2019/THE-FIRST-DROP.RL
-                </span>
-            </div>
-
-            <nav class="de-topbar-menu">
-                <ul class="de-topbar-menu-wrapper">
-                    <li class="menu-item"><a href="#"><i class="far fa-star"></i></a></li>
-                    <li class="menu-item current-menu-item"><a href="#"><i class="far fa-shopping-basket"></i>
-                            (2)</a></li>
-                </ul>
-            </nav>
-
-        </div>
-
-        <div class="de-navbar">
-
-            <div class="de-navbar-logo">
-                <div class="de-navbar-logo-image">
-                    {%- include logo-svg.html -%}
-                </div>
-            </div>
-
-            <nav class="de-navbar-menu">
-
-                <div class="de-navbar-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-                <ul class="de-navbar-menu-wrapper">
-                    <li class="menu-item">
-                        <a href="#">Collections</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">Sub Menu #1</a></li>
-                            <li><a href="#">Sub Menu #2</a></li>
-                            <li><a href="#">Sub Menu #3</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item"><a href="#">Drops</a></li>
-                    <li class="menu-item"><a href="#">Collections</a></li>
-                    <li class="menu-item">
-                        <a href="#">About</a>
-                    </li>
-                </ul>
-
-            </nav>
-
-        </div>
-
-    </div>
 
     <div class="de-body">
         <div id="main">
@@ -97,23 +33,40 @@
         </div>
     </div>
 
-    <div class="de-subfooter">
-        <div style="height: 15rem;"></div>
+    <div class="de-footer">
+        <div class="de-footer-logo lax" data-lax-opacity_md="vh 0, 0 0.25" data-lax-anchor="self">
+            {%- include logo-svg.html -%}
+        </div>
+        <div class="de-footer-wrapper">
+            <div class="de-footer-about has-paragraphs">
+                <p>*</p>
+                <p>Deadend is an idea of a Viet patriot who believes in our tribe. We have no take on any parties and
+                    organizations. The world is our capital. Vietnam is our context. Deadend is our business. We are not
+                    fashion designer and we have no boundaries to push. One day we try to make t-shirts, the other day
+                    we try to create chairs.</p>
+                <p>We are honest. We are free of space and time. We don’t compromise. And we promote inner freedom,
+                    happiness, success, and wealth.</p>
+            </div>
+            <div class="de-footer-info">
+                <ul>
+                    <li><a href="#">info@deadendvietnam.com</a></li>
+                    <li>246 Nguyen Thi Minh Khai, W.6, D.3, HCMC, VN</li>
+                    <li>+84 123 456 789</li>
+                </ul>
+            </div>
+            <div class="de-footer-contact">
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+                <a href="#">subscribe to newsletter</a>
+            </div>
+        </div>
+        <div class="de-footer-copyright">
+            &copy; 2019 Deadend.
+        </div>
     </div>
 
-    <div class="de-footer is-bottom">
-        <span class="has-text-smallcaps">© Deadend</span>
-        <div class="de-footer-left"></div>
-        <div class="de-footer-right">
-            <ul class="de-footer-socials">
-                <li><a href="#">fb</a></li>
-                <li><a href="#">ig</a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- </div>
-        </div>
-    </div> -->
 
     <!-- Javascript -->
     {%- include javascript.html -%}
